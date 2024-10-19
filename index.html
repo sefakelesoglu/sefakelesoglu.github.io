@@ -1,90 +1,130 @@
 <!DOCTYPE html>
+<html lang="tr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sefa KELEŞOĞLU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
        .top-menu {
             background-color: black;
             padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex; /* Flex düzeni kullan */
+            justify-content: space-between; /* Menü sola, ikonlar sağa */
+            align-items: center; /* Dikey ortalama */
+            padding-left: 100px;
+            padding-right: 100px;
         }
+        
+        /* Menü ve ikonlar için genel liste stili */
         .top-menu ul {
-            list-style: none; /* Liste işaretlerini kaldır */
+            list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; /* Yatay hizalama için flex kullan */
-            justify-content: center;
+            display: flex;
         }
-        .top-menu ul li {
-            margin-right: 15px; /* Menü elemanları arasında boşluk */
+
+        /* Menüdeki her eleman arasına boşluk ekle */
+        .top-menu ul.menu li {
+            margin-right: 15px;
         }
-        .top-menu ul li a {
+
+        /* Menü bağlantılarına stil */
+        .top-menu ul.menu li a {
             color: white;
-            text-decoration: none; /* Alt çizgiyi kaldır */
+            text-decoration: none;
             font-size: 1.2em;
             font-weight: bold;
         }
-       .top-menu ul li a:hover {
-            color: black;  
+
+        /* Menüde fareyle üzerine gelince stil */
+        .top-menu ul.menu li a:hover {
+            color: black;
             background-color: white;
+            padding: 5px;
         }
-        /*footer*/
+
+        /* Sosyal medya ikonları arası boşluk */
+        .top-menu ul.icons li {
+            margin-left: 15px;
+        }
+
+        /* İkonlar için stil */
+        .top-menu ul.icons li a {
+            color: white;
+            font-size: 1.5em;
+        }
+
+        /* İkonlar üzerine gelince stil */
+        .top-menu ul.icons li a:hover {
+            color: rgb(221, 221, 221);
+        }
+
+        /* Footer */
         footer {
             background-color: rgb(145, 139, 116);
             color: white;
             padding: 10px;
             text-align: center;
         }
+
         footer ul {
             list-style: none;
             padding: 0;
         }
+
         footer ul li {
             display: inline;
             margin-right: 15px;
         }
+
         footer ul li a {
             color: white;
             text-decoration: none;
         }
+
         footer ul li a:hover {
             color: #ddd;
         }
-       
-
-
 
     </style>
 </head>
 <body>
+
     <div class="top-menu">
-        <ul>
+        <ul class="menu">
             <li><a href="./index.html">Anasayfa</a></li>
             <li><a href="./blog.html">Blog</a></li>
             <li><a href="./projeler.html">Projeler</a></li>
             <li><a href="./hakkimda.html">Hakkımda</a></li>
             <li><a href="./iletisim.html">İletişim</a></li>
+        </ul>   
+        <ul class="icons">
+            <li><a href="https://www.instagram.com/sefakelesoglu_/profilecard/?igsh=MWgwYWhoOW1mNzY0cw=="><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/sefa-kele%C5%9Fo%C4%9Flu-786b92225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin-in"></i></a></li>
         </ul>
     </div>
+
     <div class="content">
         <img src="sefaresim.jpg" alt="kişisel resim" width="150" style="border-radius: 100%;">
-       <!--hakkımda-->
+       <!-- Hakkımda -->
         <h1><strong><i>Hakkımda</i></strong></h1>
-        <p1>Merhaba! Ben Sefa Keleşoğlu. Teknoloji ve yazılım dünyasına duyduğum tutku ile bu blogu oluşturma kararı aldım. Bilgisayar Mühendisliği öğrencisi olarak, sürekli gelişen teknoloji alanında öğrenmeye ve paylaşmaya devam ediyorum.
+        <p>Merhaba! Ben Sefa Keleşoğlu. Teknoloji ve yazılım dünyasına duyduğum tutku ile bu blogu oluşturma kararı aldım. Bilgisayar Mühendisliği öğrencisi olarak, sürekli gelişen teknoloji alanında öğrenmeye ve paylaşmaya devam ediyorum.</p>
 
-            <br>Bu blogda, yazılım projelerimden, teknoloji trendlerinden ve kişisel deneyimlerimden bahsedeceğim. Amacım, bilgimi ve deneyimlerimi başkalarıyla paylaşarak hem kendimi geliştirmek hem de okuyucularıma faydalı içerikler sunmaktır.
-            
-            <br>Yazılarımda, kodlama ipuçlarından, yeni çıkan teknolojilere kadar geniş bir yelpazede içerik bulabilirsiniz. Ayrıca, bu platformda sizlerle etkileşimde bulunmak ve deneyimlerinizi duymak için sabırsızlanıyorum!
-            
-           <br> Sosyal medya hesaplarım üzerinden benimle iletişime geçebilir, güncel paylaşımlarım hakkında bilgi alabilirsiniz. Tekrar hoş geldiniz!
-        </p1>
-        <!--projeler-->
+        <!-- Projeler -->
         <h2><strong><i>Projeler</i></strong></h2>
-        <p3>projeler burada gözükecek çok yakında</p3>
-        <!--Eğitim bilgileri-->
+        <p>Projeler burada gözükecek çok yakında!</p>
+
+        <!-- Eğitim Bilgileri -->
         <h2><strong><i>Eğitim Bilgilerim</i></strong></h2>
-        <p2><strong>DÜZCE ÜNİVERSİTESİ</strong></p2> <br>
-        <p3>Bilgisayar Mühendisliği / 2024-Halen</p3>
+        <p><strong>DÜZCE ÜNİVERSİTESİ</strong> <br>
+        Bilgisayar Mühendisliği / 2024-Halen</p>
+
+        <!-- Yetenekler -->
         <h2><strong><i>Yetenekler</i></strong></h2>
-        <!--yetenekler-->
         <ul>
             <li>HTML</li>
             <li>CSS</li>
@@ -92,6 +132,7 @@
             <li>Takım çalışması</li>
         </ul>
     </div>
+
     <div class="footer"> 
         <footer>
             <ul>
@@ -99,13 +140,10 @@
                 <li><a href="./blog.html">Blog</a></li>
                 <li><a href="./projeler.html">Projeler</a></li>
                 <li><a href="./hakkimda.html">Hakkımda</a></li>
-                <li><a href="./iletisim.html">İletişim</a></li> <br><br>
-                <p3>2024 Sefa Keleşoğlu - Tüm Hakları Saklıdır</p3>
+                <li><a href="./iletisim.html">İletişim</a></li>
             </ul>
+            <p>2024 Sefa Keleşoğlu - Tüm Hakları Saklıdır</p>
         </footer>       
-</div>
-
-  
-
+    </div>
 </body>
 </html>
