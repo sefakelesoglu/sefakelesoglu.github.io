@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daire Şeklinde Pop-up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            height: 200vh; /* Sayfayı kaydırmak için yeterli yükseklik */
+        }
+
+        /* Pop-up için stil */
+        .popup-overlay {
+            display: none; /* Başlangıçta gizli */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Arka planın koyulaşması */
+            z-index: 1; /* Üstte olmasını sağlar */
+        }
+
+        /* Daire şeklindeki pop-up */
+        .popup {
+            display: none; /* Başlangıçta gizli */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Ortalanmış pozisyon */
+            background-color: white; /* Arka plan rengi */
+            border-radius: 50%; /* Daire şeklinde kenar yuvarlama */
+            padding: 20px;
+            width: 150px; /* Genişlik */
+            height: 150px; /* Yükseklik */
+            text-align: center; /* Metni ortala */
+            z-index: 2; /* Üstte olmasını sağlar */
+        }
+
+        /* Pop-up gösterildiğinde stil */
+        #popup:target .popup-overlay {
+            display: block; /* Pop-up göster */
+        }
+
+        #popup:target .popup {
+            display: block; /* Pop-up göster */
+        }
+
+        /* Bağlantılar stili */
+        .social-links {
+            list-style: none; /* Liste işaretlerini kaldır */
+            padding: 0; /* Padding kaldır */
+            margin: 0; /* Margin kaldır */
+        }
+
+        .social-links li {
+            margin: 5px 0; /* Her bağlantı arasında boşluk */
+        }
+
+        .social-links a {
+            text-decoration: none; /* Alt çizgiyi kaldır */
+            color: #007BFF; /* Bağlantı rengi */
+        }
+
+        .social-links a:hover {
+            text-decoration: underline; /* Hoverda alt çizgi ekle */
+        }
+
+        /* Sayfa kaydırıldığında pop-up'ı kapatma stili */
+        .close-popup {
+            display: none; /* Başlangıçta gizli */
+        }
+
+        #popup:target .close-popup {
+            display: block; /* Kapatma bağlantısını göster */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pop-up'ı açan bağlantı -->
+    <a href="#popup" class="open-popup"><i class="fa-solid fa-arrow-right"></i></a>
+
+    <!-- Pop-up -->
+    <div id="popup">
+        <div class="popup-overlay" onclick="window.location.href='#'"></div> <!-- Sayfayı tıkladığında kapatır -->
+        <div class="popup">
+            <h2>Beni Takip Edin</h2>
+            <ul class="social-links">
+                <li><a href="https://www.instagram.com/sefakelesoglu_/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/sefa-kele%C5%9Fo%C4%9Flu-786b92225/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

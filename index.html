@@ -91,6 +91,26 @@
             list-style-type: square;
             padding-left: 20px;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+        /* Modal içerik kutusu */
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 500px; 
+        }
         /* Footer */
         footer {
             background-color: rgb(145, 139, 116);
@@ -117,8 +137,12 @@
         footer ul li a:hover {
             color: #ddd;
         }
+       /* @media(max-width: 500px) {
+            
+        }*/
 
     </style>
+   
 </head>
 <body>
 
@@ -133,6 +157,7 @@
         <ul class="icons">
             <li><a href="https://www.instagram.com/sefakelesoglu_/profilecard/?igsh=MWgwYWhoOW1mNzY0cw==" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
             <li><a href="https://www.linkedin.com/in/sefa-kele%C5%9Fo%C4%9Flu-786b92225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/sefakelesoglu" target="_blank"><i class="fa-brands fa-github"></i></a></li>
         </ul>
     </div>
 
@@ -152,15 +177,27 @@
         Bilgisayar Mühendisliği / 2024-Halen</p>
 
         <!-- Yetenekler -->
-        <h2><strong><i>Yetenekler</i></strong></h2>
+         <button id="modal">Yeteneklerimi Görmek İçin Tıkla</button>
+         <div id="yetenekler-modal" class="modal">
+            <div class="modal-content">  
+                <h2><strong><i>Yetenekler</i></strong></h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Git</li>
+                    <li>Takım çalışması</li>
+                </ul>
+            </div>
+         </div>
+       <!-- <h2><strong><i>Yetenekler</i></strong></h2>
         <ul>
             <li>HTML</li>
             <li>CSS</li>
             <li>Git</li>
             <li>Takım çalışması</li>
-        </ul>
+        </ul>-->
     </div>
-
+        
     <div class="footer"> 
         <footer>
             <ul>
@@ -173,5 +210,22 @@
             <p>2024 Sefa Keleşoğlu - Tüm Hakları Saklıdır</p>
         </footer>       
     </div>
+    <script>
+        // Modal ve buton elementlerini al
+        var modal = document.getElementById("yetenekler-modal");
+        var btn = document.getElementById("modal");
+    
+        // Butona tıklayınca modalı göster
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        // Kullanıcı modala tıklayınca pencereyi kapat
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
