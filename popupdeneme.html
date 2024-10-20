@@ -1,328 +1,52 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sefa KELEŞOĞLU</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <style>
-       .top-menu {
-            background-color: black;
-            padding: 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex; /* Flex düzeni kullan */
-            justify-content: space-between; /* Menü sola, ikonlar sağa */
-            align-items: center; /* Dikey ortalama */
-            padding-left: 100px;
-            padding-right: 100px;
-        }
-        
-        /* Menü ve ikonlar için genel liste stili */
-        .top-menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+<script>
+    // EmailJS servislerini başlat
+    (function(){
+        emailjs.init("D48MxE5EhcJ2LAzaN"); // Buraya EmailJS kullanıcı kimliğinizi ekleyin
+    })();
 
-        /* Menüdeki her eleman arasına boşluk ekle */
-        .top-menu ul.menu li {
-            margin-right: 15px;
-        }
+    function sendEmail(event) {
+        event.preventDefault(); // Formun varsayılan gönderimini engelle
 
-        /* Menü bağlantılarına stil */
-        .top-menu ul.menu li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
+        // Formdan alınan veriler
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        const feedback = document.getElementById("feedback").value;
 
-        /* Menüde fareyle üzerine gelince stil */
-        .top-menu ul.menu li a:hover {
-            color: black;
-            background-color: white;
-            padding: 5px;
-        }
-
-        /* Sosyal medya ikonları arası boşluk */
-        .top-menu ul.icons li {
-            margin-left: 15px;
-        }
-
-        /* İkonlar için stil */
-        .top-menu ul.icons li a {
-            color: white;
-            font-size: 1.5em;
-        }
-
-        /* İkonlar üzerine gelince stil */
-        .top-menu ul.icons li a:hover {
-            color: rgb(221, 221, 221);
-        }
-        .content {
-            max-width: 700px;
-            margin: 15px auto;
-            padding: 25px;
-            background-color: rgb(230, 230, 230);
-            border-radius: 10px;
-            box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.3);
-        }
-        .content img {
-            display: block;
-            margin: 0 auto 20px auto;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-        }
-        .content h1, .content h2 {
-            text-align: center;
-            color: rgb(51, 51, 51);
-        }
-        .content p {
-            text-align: justify;
-            line-height: 1.6;
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); 
-        }
-
-        /* Modal içerik kutusu */
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; 
-            max-width: 500px; 
-        }
-        /* Footer */
-        footer {
-            background-color: rgb(145, 139, 116);
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        footer ul li {
-            display: inline;
-            margin-right: 15px;
-        }
-
-        footer ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer ul li a:hover {
-            color: #ddd;
-        }
-        @media(max-width: 500px) {
-            /* Genel Mobil Stiller */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    width: 100%;
-    padding: 15px;
-}
-
-/* Navbar için Mobil Tasarım */
-.top-menu ul {
-    display: flex;
-    flex-direction: column; /* Menü elemanlarını dikey hizala */
-    padding: 0;
-    margin: 0;
-}
-
-.top-menu ul li {
-    margin: 10px 0; /* Menü elemanları arasında boşluk */
-}
-
-.top-menu ul li a {
-    font-size: 1.2em;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    display: block;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Ana İçerik */
-.content img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-
-.content h1, .content h2, .content p, .content ul {
-    padding: 10px;
-}
-
-/* Sosyal Medya İkonları */
-.social-links {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-.social-links li a {
-    font-size: 1.5em;
-    color: #007BFF;
-}
-
-/* Footer */
-.footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-}
-
-/* 500px ve Altındaki Ekranlar İçin Medya Sorgusu */
-@media (max-width: 500px) {
-    .top-menu ul {
-        flex-direction: column; /* Menü elemanları dikey hizalanır */
+        // EmailJS ile e-posta gönderme
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+            name: name,
+            email: email,
+            message: message,
+            feedback: feedback
+        }).then(function(response) {
+            console.log("Success!", response.status, response.text);
+            alert("Mesajınız başarıyla gönderildi!");
+        }, function(error) {
+            console.log("Failed to send email:", error);
+            alert("Mesaj gönderiminde bir hata oluştu.");
+        });
     }
+</script>
 
-    .top-menu ul li {
-        margin: 5px 0; /* Menü elemanları arasındaki boşluk azaltılır */
-    }
 
-    .content h1, .content h2 {
-        font-size: 1.5em;
-    }
 
-    .content img {
-        width: 80%; /* Resmi küçült */
-        margin: 0 auto; /* Ortala */
-    }
-
-    .social-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer {
-        font-size: 0.9em; /* Font boyutunu küçült */
-        padding: 10px;
-    }
-}
-
-            }
-        
-
-    </style>
-   
-</head>
-<body>
-
-    <div class="top-menu">
-        <ul class="menu">
-            <li><a href="./index.html">Anasayfa</a></li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="./projeler.html">Projeler</a></li>
-            <li><a href="./hakkimda.html">Hakkımda</a></li>
-            <li><a href="./iletisim.html">İletişim</a></li>
-        </ul>   
-        <ul class="icons">
-            <li><a href="https://www.instagram.com/sefakelesoglu_/profilecard/?igsh=MWgwYWhoOW1mNzY0cw==" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/sefa-kele%C5%9Fo%C4%9Flu-786b92225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li><a href="https://github.com/sefakelesoglu" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-        </ul>
-    </div>
-
-    <div class="content">
-        <img src="sefaresim.jpg" alt="kişisel resim" width="150" style="border-radius: 100%;">
-       <!-- Hakkımda -->
-        <h1><strong><i>Hakkımda</i></strong></h1>
-        <p>Merhaba! Ben Sefa Keleşoğlu. Teknoloji ve yazılım dünyasına duyduğum tutku ile bu blogu oluşturma kararı aldım. Bilgisayar Mühendisliği öğrencisi olarak, sürekli gelişen teknoloji alanında öğrenmeye ve paylaşmaya devam ediyorum.</p>
-
-        <!-- Projeler -->
-        <h2><strong><i>Projeler</i></strong></h2>
-        <p>Projeler burada gözükecek çok yakında!</p>
-
-        <!-- Eğitim Bilgileri -->
-        <h2><strong><i>Eğitim Bilgilerim</i></strong></h2>
-        <p><strong>DÜZCE ÜNİVERSİTESİ</strong> <br>
-        Bilgisayar Mühendisliği / 2024-Halen</p>
-
-        <!-- Yetenekler -->
-         <button id="modal">Yeteneklerimi Görmek İçin Tıkla</button>
-         <div id="yetenekler-modal" class="modal">
-            <div class="modal-content">  
-                <h2><strong><i>Yetenekler</i></strong></h2>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Git</li>
-                    <li>Takım çalışması</li>
-                </ul>
-            </div>
-         </div>
-       <!-- <h2><strong><i>Yetenekler</i></strong></h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Git</li>
-            <li>Takım çalışması</li>
-        </ul>-->
-    </div>
-        
-    <div class="footer"> 
-        <footer>
-            <ul>
-                <li><a href="./index.html">Anasayfa</a></li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./projeler.html">Projeler</a></li>
-                <li><a href="./hakkimda.html">Hakkımda</a></li>
-                <li><a href="./iletisim.html">İletişim</a></li>
-            </ul>
-            <p>2024 Sefa Keleşoğlu - Tüm Hakları Saklıdır</p>
-        </footer>       
-    </div>
-    <script>
-        // Modal ve buton elementlerini al
-        var modal = document.getElementById("yetenekler-modal");
-        var btn = document.getElementById("modal");
+<script type="text/javascript">
+    (function(){
+        emailjs.init("D48MxE5EhcJ2LAzaN");  // Replace with your EmailJS user ID
+    })();
     
-        // Butona tıklayınca modalı göster
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-    
-        // Kullanıcı modala tıklayınca pencereyi kapat
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-</body>
-</html>
+    function sendEmail(event) {
+        event.preventDefault();
+        
+        const serviceID = "service_pih4s5o";  // Replace with your EmailJS service ID
+        const templateID = "template_v2lk2ec";  // Replace with your EmailJS template ID
+        
+        emailjs.sendForm(serviceID, templateID, "#contactForm")
+            .then(() => {
+                alert("Email Sent Successfully!");
+            }, (err) => {
+                alert("Failed to send email: " + JSON.stringify(err));
+            });
+    }
+</script>

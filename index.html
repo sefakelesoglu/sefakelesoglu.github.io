@@ -12,14 +12,13 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex; /* Flex düzeni kullan */
-            justify-content: space-between; /* Menü sola, ikonlar sağa */
-            align-items: center; /* Dikey ortalama */
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
             padding-left: 100px;
             padding-right: 100px;
         }
         
-        /* Menü ve ikonlar için genel liste stili */
         .top-menu ul {
             list-style: none;
             margin: 0;
@@ -27,12 +26,10 @@
             display: flex;
         }
 
-        /* Menüdeki her eleman arasına boşluk ekle */
         .top-menu ul.menu li {
             margin-right: 15px;
         }
 
-        /* Menü bağlantılarına stil */
         .top-menu ul.menu li a {
             color:#ffffff;
             text-decoration: none;
@@ -40,25 +37,21 @@
             font-weight: bold;
         }
 
-        /* Menüde fareyle üzerine gelince stil */
         .top-menu ul.menu li a:hover {
             color: #333333;
             background-color: #bbbbbb;
             padding: 5px;
         }
 
-        /* Sosyal medya ikonları arası boşluk */
         .top-menu ul.icons li {
             margin-left: 15px;
         }
 
-        /* İkonlar için stil */
         .top-menu ul.icons li a {
             color: #f5f5f5;
             font-size: 1.5em;
         }
 
-        /* İkonlar üzerine gelince stil */
         .top-menu ul.icons li a:hover {
             color: #dddddd;
         }
@@ -102,7 +95,6 @@
             background-color: #00000f80; 
         }
 
-        /* Modal içerik kutusu */
         .modal-content {
             background-color: #F5F5F5;
             margin: 15% auto;
@@ -267,16 +259,13 @@
         </footer>       
     </div>
     <script>
-        // Modal ve buton elementlerini al
         var modal = document.getElementById("yetenekler-modal");
         var btn = document.getElementById("modal");
     
-        // Butona tıklayınca modalı göster
         btn.onclick = function() {
             modal.style.display = "block";
         }
     
-        // Kullanıcı modala tıklayınca pencereyi kapat
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
