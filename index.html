@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
        .top-menu {
-            background-color: black;
+            background-color: #333333;
             padding: 10px;
             position: sticky;
             top: 0;
@@ -34,7 +34,7 @@
 
         /* Menü bağlantılarına stil */
         .top-menu ul.menu li a {
-            color: white;
+            color:#ffffff;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: bold;
@@ -42,8 +42,8 @@
 
         /* Menüde fareyle üzerine gelince stil */
         .top-menu ul.menu li a:hover {
-            color: black;
-            background-color: white;
+            color: #333333;
+            background-color: #bbbbbb;
             padding: 5px;
         }
 
@@ -54,21 +54,21 @@
 
         /* İkonlar için stil */
         .top-menu ul.icons li a {
-            color: white;
+            color: #ffffff;
             font-size: 1.5em;
         }
 
         /* İkonlar üzerine gelince stil */
         .top-menu ul.icons li a:hover {
-            color: rgb(221, 221, 221);
+            color: #dddddd;
         }
         .content {
             max-width: 700px;
             margin: 15px auto;
             padding: 25px;
-            background-color: rgb(230, 230, 230);
+            background-color:#F5F5F5;
             border-radius: 10px;
-            box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.3);
+            box-shadow: 5px 5px 5px #7e7e7e4d;
         }
         .content img {
             display: block;
@@ -79,7 +79,7 @@
         }
         .content h1, .content h2 {
             text-align: center;
-            color: rgb(51, 51, 51);
+            color: #333333;
         }
         .content p {
             text-align: justify;
@@ -99,22 +99,23 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); 
+            background-color: #00000f80; 
         }
 
         /* Modal içerik kutusu */
         .modal-content {
-            background-color: #fff;
+            background-color: #F5F5F5;
             margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%; 
             max-width: 500px; 
+            border-radius: 10px;
         }
         /* Footer */
         footer {
-            background-color: rgb(145, 139, 116);
-            color: white;
+            background-color: #1E90FF;
+            color: #F5F5F5;
             padding: 10px;
             text-align: center;
         }
@@ -137,9 +138,38 @@
         footer ul li a:hover {
             color: #ddd;
         }
-       /* @media(max-width: 500px) {
-            
-        }*/
+        @media(max-width: 500px) {
+            .top-menu{
+                background-color: #333333;
+                padding: 10px;
+                position: sticky;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .top-menu ul {
+                display: flex;
+                font-size: 0.6em;
+                justify-content: space-between;
+                padding: 0;
+            }
+            .top-menu ul li {
+                margin: 0px;
+            }
+            .content {
+            max-width: 400px;
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #F5F5F5;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.3);
+            }
+            .content p {
+            text-align: justify;
+            line-height: 1.2;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            }
+        }
 
     </style>
    

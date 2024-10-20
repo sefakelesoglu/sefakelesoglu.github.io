@@ -106,6 +106,24 @@
         footer ul li a:hover {
             color: #ddd;
         }
+        @media(max-width: 500px) {
+            .top-menu{
+                background-color: black;
+                padding: 10px;
+                position: sticky;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .top-menu ul {
+                display: flex;
+                font-size: 0.6em;
+                justify-content: space-between;
+                padding: 0;
+            }
+            .top-menu ul li {
+                margin: 0px;
+            } 
+        }
     
     </style>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>

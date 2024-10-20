@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
        .top-menu {
-            background-color: black;
+            background-color: #333333;
             padding: 10px;
             position: sticky;
             top: 0;
@@ -34,7 +34,7 @@
 
         /* Menü bağlantılarına stil */
         .top-menu ul.menu li a {
-            color: white;
+            color: #f5f5f5;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: bold;
@@ -42,8 +42,8 @@
 
         /* Menüde fareyle üzerine gelince stil */
         .top-menu ul.menu li a:hover {
-            color: black;
-            background-color: white;
+            color: #333333;
+            background-color: #f5f5f5;
             padding: 5px;
         }
 
@@ -54,13 +54,13 @@
 
         /* İkonlar için stil */
         .top-menu ul.icons li a {
-            color: white;
+            color: #f5f5f5;
             font-size: 1.5em;
         }
 
         /* İkonlar üzerine gelince stil */
         .top-menu ul.icons li a:hover {
-            color: rgb(221, 221, 221);
+            color: #dddddd;
         }
          /*content*/
          .content {
@@ -104,6 +104,35 @@
 
         footer ul li a:hover {
             color: #ddd;
+        }
+        @media(max-width: 500px) {
+            .top-menu{
+                background-color: black;
+                padding: 10px;
+                position: sticky;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .top-menu ul {
+                display: flex;
+                font-size: 0.6em;
+                justify-content: space-between;
+                padding: 0;
+            }
+            .top-menu ul li {
+                margin: 0px;
+            } 
+            .content{
+                max-width: 400px;
+                margin: 10px auto;
+                padding: 15px;
+                background-color: rgb(230, 230, 230);
+                border-radius: 10px;
+                box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.3);
+            }
+            h1{
+                font-size: 0.9em;
+            }
         }
 
     </style>

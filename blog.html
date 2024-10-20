@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
        .top-menu {
-            background-color: black;
+            background-color: #333333;
             padding: 10px;
             position: sticky;
             top: 0;
@@ -34,7 +34,7 @@
 
         /* Menü bağlantılarına stil */
         .top-menu ul.menu li a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: bold;
@@ -42,8 +42,8 @@
 
         /* Menüde fareyle üzerine gelince stil */
         .top-menu ul.menu li a:hover {
-            color: black;
-            background-color: white;
+            color: #333333;
+            background-color: #bbbbbb;
             padding: 5px;
         }
 
@@ -60,13 +60,13 @@
 
         /* İkonlar üzerine gelince stil */
         .top-menu ul.icons li a:hover {
-            color: rgb(221, 221, 221);
+            color: #dddddd;
         }
         /*content*/
         .content {
-            background-color: rgb(230, 230, 230);
+            background-color: #F5F5F5;
             border-radius: 10px;
-            box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.3);
+            box-shadow: 5px 5px 5px #7e7e7e4d;
             padding: 20px;
             max-width: 700px;
             margin: 15px auto;
@@ -75,14 +75,14 @@
             min-height: 100vh;
         }
         h1 {
-            color: rgb(51, 51, 51);
+            color: #333333;
             font-size: 1.2em;
             margin: 10px;
         }
         /* Footer */
         footer {
-            background-color: rgb(145, 139, 116);
-            color: white;
+            background-color: #1E90FF;
+            color: #F5F5F5;
             padding: 10px;
             text-align: center;
         }
@@ -98,12 +98,30 @@
         }
 
         footer ul li a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
         }
 
         footer ul li a:hover {
             color: #ddd;
+        }
+        @media(max-width: 500px) {
+            .top-menu{
+                background-color: #333333;
+                padding: 10px;
+                position: sticky;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .top-menu ul {
+                display: flex;
+                font-size: 0.6em;
+                justify-content: space-between;
+                padding: 0;
+            }
+            .top-menu ul li {
+                margin: 0px;
+            } 
         }
 
     </style>
